@@ -3,14 +3,14 @@ const { getInput } = require("../readInput");
 const fuelRequirementsForModule = mass => Math.floor(mass / 3) - 2;
 
 const fuelRequirementForModuleAndFuel = mass => {
-  let fuel = fuelRequirementsForModule(mass);
-  let totalFuel = fuel;
-  while (fuel > 0) {
-    fuel = fuelRequirementsForModule(fuel);
-    if (fuel > 0) {
-      totalFuel += fuel;
+  let fuelMass = fuelRequirementsForModule(mass);
+  let totalFuel = fuelMass;
+  while (fuelMass > 0) {
+    fuelMass = fuelRequirementsForModule(fuelMass);
+    if (fuelMass > 0) {
+      totalFuel += fuelMass;
     }
-    console.log(fuel, totalFuel);
+    console.log(fuelMass, totalFuel);
   }
   return totalFuel;
 };

@@ -1,11 +1,11 @@
 const fs = require("fs");
 
-function getInput(filePath, callBack) {
+function getInput(filePath, callBack, delimiter = "\n") {
   const readInput = cb => (error, input) => {
     if (error) {
       console.error("ERROR:", error);
     }
-    const inputArray = input.split("\n");
+    const inputArray = input.split(delimiter);
     cb(inputArray);
   };
 
